@@ -31,16 +31,18 @@ Removes em dashes from what Claude writes, before it lands. About 80 lines of Ty
 | Bash | only `git commit` and `gh pr` / `gh issue` `create`, `edit`, `comment`; every other command runs as is |
 | Replies | text blocks in Claude's responses, before they are stored |
 
-Rewrite rules (`, ` is the em dash, `–` the en dash):
+Rewrite rules (<code>&mdash;</code> is the em dash, <code>&ndash;</code> the en dash):
+
+<!-- Dashes in this file are HTML entities on purpose. With literal characters, dashless rewrites its own examples whenever Claude edits this file. -->
 
 | Input | Output |
 | --- | --- |
-| `a, b`, `a, b` | `a, b` |
-| `, item` at line start | `item` (indentation kept) |
-| `done, ` at line end | `done` |
-| `note: x` | `note: x` |
-| `a, b` (spaced en dash) | `a, b` |
-| `1990–2000` (range) | unchanged |
+| <code>a &mdash; b</code>, <code>a&mdash;b</code> | `a, b` |
+| <code>&mdash; item</code> at line start | `item` (indentation kept) |
+| <code>done &mdash;</code> at line end | `done` |
+| <code>note: &mdash; x</code> | `note: x` |
+| <code>a &ndash; b</code> (spaced en dash) | `a, b` |
+| <code>1990&ndash;2000</code> (range) | unchanged |
 | `--force`, `-- file` | unchanged |
 
 The status line shows a running count: `dashless: 3 em dashes fixed`.
