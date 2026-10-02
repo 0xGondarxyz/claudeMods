@@ -1,0 +1,16 @@
+{
+  "name": "claudemods",
+  "owner": {
+    "name": "Murat Can Yuksel",
+    "url": "https://github.com/0xGondarxyz"
+  },
+  "description": "Free, small, readable mods for Claude Code.",
+  "plugins": [
+    {
+      "name": "dashless",
+      "source": "./dashless",
+      "description": "Rewrites em dashes out of Claude's replies, file writes and edits, and commit/PR messages before they land.",
+      "version": "0.1.0"
+    }
+  ]
+}
